@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _openDialog() {
     showDialog(context: context, builder: (context){
-      return Dialog(child: Container(width: 400,height: 300,child: Text('ダイアログだよ'),),);
+      return Dialog(child: Container(width: 400,height: 300,child: Center(child: Text('ダイアログだよ', style: Theme.of(context).textTheme.bodyLarge,),),),);
     });
   }
 
