@@ -30,14 +30,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
+  void _openDialog() {
     showDialog(context: context, builder: (context){
-      return Dialog(child: Container(width: 400,height: 300,),);
-    });
-    setState(() {
-      _counter++;
+      return Dialog(child: Container(width: 400,height: 300,child: Text('ダイアログだよ'),),);
     });
   }
 
@@ -48,22 +44,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('日本語テスト'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        child: FilledButton(
+          onPressed: _openDialog,
+          child: Text('ダイアログを開く'),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
