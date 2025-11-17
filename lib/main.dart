@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 20,),
             FilledButton(
               onPressed: _moveToListPage,
-              child: Text('リストページに移動を開く'),
+              child: Text('アイコンボタンページに移動'),
             ),
           ],
         ),
