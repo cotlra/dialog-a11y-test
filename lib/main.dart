@@ -37,17 +37,61 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _moveToListPage(){
+    Navigator.of( context).push(MaterialPageRoute(builder: (context){
+      return const ListPage();
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('ダイアログの表示テスト'),
       ),
       body: Center(
-        child: FilledButton(
-          onPressed: _openDialog,
-          child: Text('ダイアログを開く'),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FilledButton(
+              onPressed: _openDialog,
+              child: Text('ダイアログを開く'),
+            ),
+                        FilledButton(
+              onPressed: _moveToListPage,
+              child: Text('リストページに移動を開く'),
+            ),
+          ],
         ),
+      ),
+    );
+  }
+}
+
+class ListPage extends StatelessWidget {
+  const ListPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('リストの表示テスト'),
+      ),
+
+      body: Column(
+        verticalDirection: VerticalDirection.up,
+        children: [
+          Text('テキスト1'),
+          Text('テキスト2'),
+          Text('テキスト3'),
+          Text('テキスト4'),
+          Text('テキスト5'),
+          Text('テキスト6'),
+          Text('テキスト7'),
+          Text('テキスト8'),
+          Text('テキスト9'),
+          Text('テキスト10'),
+        ],
       ),
     );
   }
