@@ -57,7 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: _openDialog,
               child: Text('ダイアログを開く'),
             ),
-                        FilledButton(
+            SizedBox(height: 20,),
+            FilledButton(
               onPressed: _moveToListPage,
               child: Text('リストページに移動を開く'),
             ),
@@ -80,6 +81,7 @@ class ListPage extends StatelessWidget {
 
       body: Column(
         verticalDirection: VerticalDirection.up,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Text('テキスト1'),
           Text('テキスト2'),
