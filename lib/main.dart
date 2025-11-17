@@ -47,12 +47,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ダイアログの表示テスト'),
+        title: Text('アクセシビリティ機能テスト'),
       ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.accessibility),
+                SizedBox(width: 10,),
+                Text('ちょっと長めのテキスト')
+              ],
+            ),
+            SizedBox(height: 20,),
             FilledButton(
               onPressed: _openDialog,
               child: Text('ダイアログを開く'),
