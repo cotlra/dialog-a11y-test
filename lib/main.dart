@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
-  SemanticsBinding.instance.ensureSemantics();
   runApp(const MyApp());
 }
 
