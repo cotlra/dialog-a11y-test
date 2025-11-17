@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _moveToListPage(){
     Navigator.of( context).push(MaterialPageRoute(builder: (context){
-      return const ListPage();
+      return const IconButtonPage();
     }));
   }
 
@@ -78,31 +78,32 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class ListPage extends StatelessWidget {
-  const ListPage({super.key});
+class IconButtonPage extends StatelessWidget {
+  const IconButtonPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('リストの表示テスト'),
+        title: Text('アイコンボタンテスト'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.send),
+            onPressed: () {},
+          ),
+        ],
       ),
 
-      body: Column(
-        verticalDirection: VerticalDirection.up,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text('テキスト1'),
-          Text('テキスト2'),
-          Text('テキスト3'),
-          Text('テキスト4'),
-          Text('テキスト5'),
-          Text('テキスト6'),
-          Text('テキスト7'),
-          Text('テキスト8'),
-          Text('テキスト9'),
-          Text('テキスト10'),
-        ],
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(24),
+        child: Column(
+          spacing: 16,
+          children: [
+            TextField(decoration: InputDecoration(label: Text('名前')),),
+            TextField(decoration: InputDecoration(label: Text('電話番号')),),
+            TextField(decoration: InputDecoration(label: Text('メールアドレス')),),
+          ],
+        ),
       ),
     );
   }
