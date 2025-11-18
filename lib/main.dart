@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(const MyApp());
+  SemanticsBinding.instance.ensureSemantics();
 }
 
 class MyApp extends StatelessWidget {
